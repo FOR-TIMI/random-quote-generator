@@ -1,28 +1,29 @@
 #quote-box{
     display: flex;
     flex-direction: column;
-    width: 500px;
+    width: 350px;
     padding: 20px;
     font-family: Raleway, sans-serif;
     margin: auto;
     background-color: rgb(245, 238, 238);
+    box-sizing: border-box;
 }
 
 .quote-text{
     display: flex;
     text-align: center;
-    font-size: 1.9rem;
+    font-size: 1.2rem;
 }
 
 .quote-author{
     margin-top: 12px;
     display: flex;
     justify-content: flex-end;
-    font-size: 1.3rem;
+    font-size: 0.8rem;
 }
 
 .buttons{
-    width: 500px;
+    width: 300px;
     margin: auto;
     display: block;
 }
@@ -57,7 +58,7 @@
 
 
 #new-quote {
-    float: right;
+    float:right;
   }
 
 

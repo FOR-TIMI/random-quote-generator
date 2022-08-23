@@ -12,3 +12,12 @@ body{
     align-items: center;
 }
 
+a{
+    text-decoration: none;
+    color: #fff;
+}
+.footer{
+    text-align: center;
+    color: #fff;
+}
+
