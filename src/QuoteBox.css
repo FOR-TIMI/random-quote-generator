@@ -1,0 +1,66 @@
+#quote-box{
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    padding: 20px;
+    font-family: Raleway, sans-serif;
+    margin: auto;
+    background-color: rgb(245, 238, 238);
+}
+
+.quote-text{
+    display: flex;
+    text-align: center;
+    font-size: 1.9rem;
+}
+
+.quote-author{
+    margin-top: 12px;
+    display: flex;
+    justify-content: flex-end;
+    font-size: 1.3rem;
+}
+
+.buttons{
+    width: 500px;
+    margin: auto;
+    display: block;
+}
+
+.button{
+    height: 38px;
+    border: none;
+    border-radius: 3px;
+    color: #fff;
+    background-color: #333;
+    outline: none;
+    font-size: 0.85em;
+    padding: 8px 18px 6px 18px;
+    margin-top: 30px;
+    opacity: 1;
+    cursor: pointer;
+}
+
+#tweet-quote,
+#tumblr-quote {
+  float: left;
+  padding: 0px;
+  padding-top: 7px;
+  text-align: center;
+  font-size: 1.15em;
+  margin-right: 5px;
+  height: 32px;
+  width: 38px;
+}
+
+
+
+
+#new-quote {
+    float: right;
+  }
+
+
+  #tweet-quote:hover,#tumblr-quote:hover,#new-quote:hover{
+    opacity: 0.8;
+  }
