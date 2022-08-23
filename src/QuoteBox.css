@@ -1,45 +1,44 @@
 #quote-box{
     display: flex;
     flex-direction: column;
-    width: 350px;
-    padding: 20px;
+    width: 500px;
+    padding: 30px;
     font-family: Raleway, sans-serif;
     margin: auto;
     background-color: rgb(245, 238, 238);
     box-sizing: border-box;
+    border-radius: 10px;
 }
 
 .quote-text{
     display: flex;
     text-align: center;
-    font-size: 1.2rem;
+    font-size: 1.8rem;
 }
 
 .quote-author{
     margin-top: 12px;
     display: flex;
     justify-content: flex-end;
-    font-size: 0.8rem;
+    font-size: 1.2rem;
 }
 
 .buttons{
-    width: 300px;
+    width: 440px;
     margin: auto;
     display: block;
 }
 
 .button{
-    height: 38px;
+    height: 40px;
     border: none;
-    border-radius: 3px;
     color: #fff;
-    background-color: #333;
-    outline: none;
     font-size: 0.85em;
-    padding: 8px 18px 6px 18px;
+    padding: 8px 17px 7px 20px;
     margin-top: 30px;
-    opacity: 1;
     cursor: pointer;
+    outline: none;
+    border-radius: 8px;
 }
 
 #tweet-quote,
@@ -56,9 +55,9 @@
 
 
 
-
 #new-quote {
     float:right;
+    font-size: 1.15em;
   }
 
 

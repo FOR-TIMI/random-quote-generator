@@ -5,6 +5,37 @@ import './QuoteBox.css';
 class QuoteBox extends Component{
     constructor(props){
         super(props)
+        this.handleClick = this.handleClick.bind(this);
+    }
+
+    handleClick(){
+        this.getQuoteBoxText()
+    }
+
+    getQuoteBoxText(){
+      const url = 'https://type.fit/api/quotes'
+      // this.setQuoteBoxText(data)
+
+      fetch(url)
+        .then(res => res.json())
+        .then(data => {
+           data = data[Math.floor(Math.random() * data.length)]
+           this.setQuoteBoxText(data)
+        })
+          
+    }
+
+
+
+    setQuoteBoxText(data){
+      const text = document.querySelector('#text');
+      const author = document.querySelector('#author');
+      const tweetTag = document.querySelector('#tweet-quote');
+
+      tweetTag.setAttribute('href',`twitter.com/intent/tweet?text=${data.text}`)
+      text.innerHTML = data.text
+      author.innerHTML = data.author
+
     }
 
         
@@ -16,10 +47,7 @@ class QuoteBox extends Component{
     render(){
             
       let randomColor = this.randColor();
-
-      const handleClick = () => {
-        console.log('clicked')
-      }
+       
 
         
         return(
@@ -30,25 +58,26 @@ class QuoteBox extends Component{
               <i className="fa fa-quote-left"> </i><span id="text">If you want your children to turn out well, spend twice as much time with them, and half as much money.</span>
             </div>
             <div className="quote-author">- <span id="author">matt damon</span></div>
-            <div className="buttons">
-            <a
-              className="button"
-              id="tweet-quote"
-              title="Tweet this quote!"
-              target="_top"
-            >
-              <i className="fa fa-twitter"></i>
-            </a>
-            <a
-              className="button"
-              id="tumblr-quote"
-              title="Post this quote on tumblr!"
-              target="_blank"
-            >
-              <i className="fa fa-tumblr"></i>
-            </a>
-            <button className="button" onClick={handleClick} id="new-quote">New quote</button>
-          </div>
+              <div className="buttons">
+              <a
+                className="button"
+                id="tweet-quote"
+                title="Tweet this quote!"
+                target="_top"
+              >
+                <i className="fa fa-twitter"></i>
+              </a>
+              <a
+                className="button"
+                id="tumblr-quote"
+                title="Post this quote on tumblr!"
+                target="_blank"
+              >
+                <i className="fa fa-tumblr"></i>
+              </a> 
+           <button className="button" onClick={this.handleClick} id="new-quote">New quote</button>
+              
+            </div>
           </div>
         )
     }
