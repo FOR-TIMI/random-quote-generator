@@ -11,6 +11,11 @@
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
+.title{
+    margin-bottom: 20px;
+    text-align: center;
+}
+
 .quote-text{
     display: flex;
     text-align: center;
@@ -22,6 +27,11 @@
     display: flex;
     justify-content: flex-end;
     font-size: 1.2rem;
+
+}
+
+#author{
+    background-color: rgb(245, 238, 238);
 }
 
 .buttons{
@@ -65,3 +75,5 @@
   #tweet-quote:hover,#tumblr-quote:hover,#new-quote:hover{
     opacity: 0.8;
   }
+
+

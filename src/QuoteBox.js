@@ -27,7 +27,7 @@ class QuoteBox extends Component{
 
         
     randColor(){
-      const colors = [ '#16a085','#27ae60', '#2c3e50','#f39c12','#e74c3c','#9b59b6','#FB6964','#342224','#472E32','#BDBB99','#77B1A9','#73A857'];
+      const colors = [ '#3D5220','#27ae60', '#2c3e50','#B7CB99','#e74c3c','#9b59b6','#FB6964','#431D32','#472E32','#2A3759','#77B1A9','#73A857','#778FD2'];
       return colors[Math.floor(Math.random()*colors.length)]
     }
     
@@ -37,8 +37,6 @@ class QuoteBox extends Component{
       const text = document.querySelector('#text');
       const author = document.querySelector('#author');
       const tweetTag = document.querySelector('#tweet-quote');
-
-
       const body = document.querySelector('body');
       const buttons = document.querySelectorAll('.button')
       const quoteBox = document.getElementById('quote-box')
@@ -52,9 +50,12 @@ class QuoteBox extends Component{
       quoteBox.setAttribute('style',`color:${randomColor}`)
       tweetTag.setAttribute('href',`https://twitter.com/intent/tweet?text=${data.text}`)
 
-
+      
+      
+      text.classList.remove('skeleton')
+      author.classList.remove('skeleton')
       text.innerHTML = data.text
-      author.innerHTML = data.author
+      author.innerHTML = data.author || 'Anonymous'
 
     }
 
@@ -68,11 +69,12 @@ class QuoteBox extends Component{
         return(
            
             <div id="quote-box">
+            <h1 className='title'>Quote</h1>
             {this.getQuoteBoxData()}
             <div className="quote-text">
-              <i className="fa fa-quote-left"> </i><span id="text">If you want your children to turn out well, spend twice as much time with them, and half as much money.</span>
+              <i className="fa fa-quote-left"> </i><span id="text"></span>
             </div>
-            <div className="quote-author">- <span id="author">matt damon</span></div>
+            <div className="quote-author">- <span id="author" ></span></div>
               <div className="buttons">
               <a
                 className="button"

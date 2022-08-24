@@ -17,7 +17,7 @@ import './wrapper.css';
         return(
          <div id="wrapper">
            <QuoteBox/>
-           <div className="footer"><a href="https://github.com/FOR-TIMI/random-quote-generator">By Timi</a></div>
+           <div className="footer"><a href="https://github.com/FOR-TIMI/random-quote-generator">Made By Timi</a></div>
           </div>
         )
     }
