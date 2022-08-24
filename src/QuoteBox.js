@@ -9,10 +9,10 @@ class QuoteBox extends Component{
     }
 
     handleClick(){
-        this.getQuoteBoxText()
+        this.getQuoteBoxData()
     }
 
-    getQuoteBoxText(){
+    getQuoteBoxData(){
       const url = 'https://type.fit/api/quotes'
       // this.setQuoteBoxText(data)
 
@@ -20,22 +20,9 @@ class QuoteBox extends Component{
         .then(res => res.json())
         .then(data => {
            data = data[Math.floor(Math.random() * data.length)]
-           this.setQuoteBoxText(data)
+           this.setQuoteBoxData(data)
         })
           
-    }
-
-
-
-    setQuoteBoxText(data){
-      const text = document.querySelector('#text');
-      const author = document.querySelector('#author');
-      const tweetTag = document.querySelector('#tweet-quote');
-
-      tweetTag.setAttribute('href',`twitter.com/intent/tweet?text=${data.text}`)
-      text.innerHTML = data.text
-      author.innerHTML = data.author
-
     }
 
         
@@ -44,16 +31,44 @@ class QuoteBox extends Component{
       return colors[Math.floor(Math.random()*colors.length)]
     }
     
+
+    setQuoteBoxData(data){
+      let randomColor = this.randColor();
+      const text = document.querySelector('#text');
+      const author = document.querySelector('#author');
+      const tweetTag = document.querySelector('#tweet-quote');
+
+
+      const body = document.querySelector('body');
+      const buttons = document.querySelectorAll('.button')
+      const quoteBox = document.getElementById('quote-box')
+
+      for(let button of buttons){
+        button.setAttribute('style',`background-color:${randomColor}`)
+      }
+
+      body.setAttribute('style',`background-color:${randomColor}`)
+
+      quoteBox.setAttribute('style',`color:${randomColor}`)
+      tweetTag.setAttribute('href',`https://twitter.com/intent/tweet?text=${data.text}`)
+
+
+      text.innerHTML = data.text
+      author.innerHTML = data.author
+
+    }
+
+
     render(){
             
-      let randomColor = this.randColor();
+
        
 
         
         return(
            
-            <div id="quote-box" style={{color : randomColor}}>
-            <style>{`body { background-color:${randomColor};} .button{background-color:${randomColor}`}</style>
+            <div id="quote-box">
+            {this.getQuoteBoxData()}
             <div className="quote-text">
               <i className="fa fa-quote-left"> </i><span id="text">If you want your children to turn out well, spend twice as much time with them, and half as much money.</span>
             </div>
@@ -62,8 +77,8 @@ class QuoteBox extends Component{
               <a
                 className="button"
                 id="tweet-quote"
-                title="Tweet this quote!"
-                target="_top"
+                title="Tweet this quote!"  
+                target="_top"             
               >
                 <i className="fa fa-twitter"></i>
               </a>
