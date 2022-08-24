@@ -18,12 +18,13 @@ a{
     color: #fff;
 }
 
-a:hover{
-    border-bottom: 3px solid #fff;
-}
+
 .footer{
+    box-sizing: border-box;
     text-align: center;
     color: #fff;
     margin: 20px;
 }
-
+.footer a:hover{
+    border-bottom: 3px solid #fff;
+}
