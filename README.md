@@ -14,6 +14,7 @@ This website generates random quotes
 
 
 ## Website Link
+https://for-timi.github.io/random-quote-generator/
 
 
 ## Screenshots
