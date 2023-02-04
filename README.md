@@ -1,6 +1,6 @@
 
 # Random quote generator
-This is a random quote generator that generates a random qutoe from an API.
+This is a random quote generator that generates a random qutoe from an API. When you click the button, the api generates a random quote and then displays it on the screen.
 
 ## Purpose
 This website generates random quotes
